@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <script src="ajax3.js"></script>
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById('btn');
+
+            oBtn.onclick = function(){
+                ajax({
+                    url:'post.php',
+                    data:{
+                        a:1,
+                        b:2
+                    },
+                    type:'post',
+                    success:function(res){
+                        alert(res);
+                    },
+                    error:function(s){
+                        alert(s);
+                    }
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="按钮" id="btn">
+
+</body>
+</html>

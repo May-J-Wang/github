@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="div">
+			
+		</div>
+	</body>
+	<script>
+		window.onload=function(){
+			var div=document.getElementById("div");
+			if(window.XMLHttpRequest){
+				var ajax=new XMLHttpRequest();
+			}else{
+				var ajax=new ActiveXObject('Microsoft.XMLHTTP');
+			}
+			
+			ajax.open("get","abc.txt",true);
+			ajax.send();
+			
+			ajax.onreadystatechange=function(){
+				if(ajax.readyState==4){
+					if(ajax.status>=200 && ajax.status<300 || ajax.status==304){
+						var zhi=ajax.responseText;
+						var arr=eval(zhi);
+						//console.log(arr);
+						for(var i=0;i<arr.length;i++){
+							var h3=document.createElement("h3");
+							h3.innerHTML="<a href='#'>"+arr[i].title+"</a>";
+							div.appendChild(h3);
+							for(var j=0;j<arr[i].child.length;j++){
+								var p=document.createElement("p");
+								p.innerHTML="<a href='#'>"+arr[i].child[j].title+"</a>";
+								div.appendChild(p);
+							}
+						}
+					}
+				}	
+			}
+		}
+	</script>
+	
+</html>
