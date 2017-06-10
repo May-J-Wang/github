@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>tab1切换</title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+			#tab{
+				width: 300px;
+				height: 300px;
+				border: 1px solid black;
+				margin: 50px auto;
+			}
+			#tab p{
+				width: 300px;
+				height: 39px;
+				border: 1px solid black;
+			}
+			.tab p span{
+				display: block;
+				float: left;
+				width: 100px;
+				height: 39px;
+				line-height: 39px;
+				text-align: center;
+			}
+			#tab p .on{
+				background: red;
+				color: white;
+			}
+			#tab div{
+				width: 300px;
+				height: 300px;
+				line-height: 300px;
+				text-align: center;
+				display: none;
+			}
+		</style>
+		<script>
+			window.onload=function(){
+				var oBtn=document.getElementByIdName("tab").document.getElementsByTagName("span");
+				var oDiv=document.getElementByIdName("tab").document.getElementsByTagName("div");
+				
+			}
+		</script>
+	</head>
+	<body>
+		<div id="tab">
+			<p>
+				<span class="on">A</span>
+				<span>B</span>
+				<span>C</span>
+			</p>
+			<div style="display: block;">1</div>
+			<div>2</div>
+			<div>3</div>
+		</div>
+	</body>
+</html>
